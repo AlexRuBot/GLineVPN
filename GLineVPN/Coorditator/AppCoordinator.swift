@@ -12,7 +12,7 @@ protocol Coordinator {
     var navigationController : UINavigationController { get set }
     
     func start()
-    func goTo(_ view: ViewsType)
+    func push(_ view: ViewsType)
     func back()
     func backToLogIn()
     
@@ -33,13 +33,18 @@ class AppCoordinator: Coordinator {
         let viewController = ControllerFactory.build(config: (.logIn, self))
         navigationController.setViewControllers([viewController], animated: true)
         if Auth.auth().currentUser != nil {
-            goTo(.main)
+            push(.main)
         }
     }
     
-    func goTo(_ view: ViewsType) {
+    func push(_ view: ViewsType) {
         let viewController = ControllerFactory.build(config: (view, self))
         navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func present(_ view: ViewsType) {
+        let viewController = ControllerFactory.build(config: (view, self))
+        navigationController.present(viewController, animated: true)
     }
     
     func back() {
@@ -53,7 +58,13 @@ class AppCoordinator: Coordinator {
     }
     
     func backToLogIn() {
-        let logInVC = navigationController.popToRootViewController(animated: true)
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            navigationController.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            showAlert(title: "Error", message: signOutError.localizedDescription)
+        }
     }
 
     

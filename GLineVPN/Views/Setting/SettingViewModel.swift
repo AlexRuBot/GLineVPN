@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol SettingViewModelProtocol {
+    func logOut()
+}
+
+class SettingViewModel: SettingViewModelProtocol {
+    var appCoordinator: AppCoordinator?
+    
+    func logOut() {
+        appCoordinator?.backToLogIn()
+    }
+}

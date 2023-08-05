@@ -12,6 +12,7 @@ class LogInView: UIView {
     
     let emailTextField: UITextField = {
         let textField = UITextField()
+        textField.borderStyle = .none
         textField.placeholder = "Email"
         textField.keyboardType = .emailAddress
         textField.autocapitalizationType = .none
@@ -23,6 +24,7 @@ class LogInView: UIView {
     
     let passwordTextField: UITextField = {
         let textField = UITextField()
+        textField.borderStyle = .none
         textField.placeholder = "Password"
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
@@ -112,6 +114,14 @@ class LogInView: UIView {
             make.width.equalToSuperview().multipliedBy(0.8)
             make.top.equalTo(sindUpButton.snp.bottom).offset(16)
         }
+    }
+    
+    private func textFieldAdd(_image: UIImage, _placeholder: String) {
+        let image = UIImageView(image: _image)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        emailTextField.leftView = image
+        emailTextField.leftViewMode = .always
+        emailTextField.placeholder = _placeholder
     }
 
 }

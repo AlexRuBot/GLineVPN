@@ -39,7 +39,11 @@ class LogInViewController: UIViewController {
         guard let email = logInView.emailTextField.text,
               let password = logInView.passwordTextField.text else { return }
         
-            viewModel?.logIn(email: email, password: password)
+        logInView.logInButton.isEnabled = false
+        
+        viewModel?.logIn(email: email, password: password) { [weak self] in
+            self?.logInView.logInButton.isEnabled = true
+        }
     }
     
     @objc private func sindUp() {

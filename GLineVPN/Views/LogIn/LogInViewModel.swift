@@ -8,10 +8,8 @@
 import Foundation
 import FirebaseAuth
 
-protocol LogInViewModelType: AnyObject {
-    var appCoordinator: AppCoordinator? { get set }
-    
-    func logIn(email: String, password: String)
+protocol LogInViewModelType: AnyObject {    
+    func logIn(email: String, password: String, completion: @escaping () -> Void)
     func sindUp()
     func resetPassword(email: String)
 }
@@ -21,25 +19,25 @@ class LogInViewModel: LogInViewModelType {
     
     
     
-    func logIn(email: String, password: String) {
+    func logIn(email: String, password: String, completion: @escaping () -> Void) {
         guard email.isValidEmail() else {
             appCoordinator?.showAlert(title: "Error", message: "Invalid email")
-            return
+            return completion()
         }
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] data , error in
             if let error = error {
                 print(error)
                 self?.appCoordinator?.showAlert(title: "Error", message: error.localizedDescription)
-                return
+                return completion()
             }
             
-            self?.appCoordinator?.goTo(.main)
+            self?.appCoordinator?.push(.main)
         }
         
     }
     
     func sindUp() {
-        appCoordinator?.goTo(.registration)
+        appCoordinator?.push(.registration)
     }
     
     func resetPassword(email: String) {

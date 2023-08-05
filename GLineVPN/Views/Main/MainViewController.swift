@@ -16,11 +16,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
-        baseView.logOutButton.addTarget(self, action: #selector(logOut), for: .touchUpInside)
-        if let user = user {
-            title = user.email
-        }
+        view.backgroundColor = .systemBackground
+        baseView.connectButton.addTarget(self, action: #selector(connect), for: .touchUpInside)
+        baseView.selectVPNButton.addTarget(self, action: #selector(selectVPN), for: .touchUpInside)
+        baseView.settingButton.addTarget(self, action: #selector(goToSetting), for: .touchUpInside)
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,8 +34,27 @@ class MainViewController: UIViewController {
         view.addSubview(baseView)
     }
     
-    @objc private func logOut() {
-        viewModel?.logOut()
+    
+    @objc private func connect() {
+        viewModel?.connect()
     }
+    
+    @objc private func selectVPN() {
+        viewModel?.goToSelectVPN()
+    }
+    
+    @objc private func goToSetting() {
+        viewModel?.goToSetting()
+    }
+    
+    private func bind() {
+        viewModel?.timerConnect?.bind({[weak self] time in
+            
+            DispatchQueue.main.async {
+                self?.baseView.timeLable.text = time
+            }
+        })
+    }
+    
 }
 

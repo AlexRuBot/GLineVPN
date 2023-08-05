@@ -32,7 +32,10 @@ class RegistrationViewController: UIViewController {
         guard let email = baseView.emailTextField.text,
               let password = baseView.passwordTextField.text else { return }
         
-        viewModel?.singUp(email: email, password: password)
+        baseView.sindUpButton.isEnabled = false
+        viewModel?.singUp(email: email, password: password) {
+            self.baseView.sindUpButton.isEnabled = true
+        }
     }
 }
 

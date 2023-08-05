@@ -8,18 +8,15 @@
 import Foundation
 import FirebaseAuth
 
-protocol RegistrationViewModelType: AnyObject {
-    var appCoordinator: AppCoordinator? { get set }
-    
-    func singUp(email: String, password: String)
-
+protocol RegistrationViewModelType: AnyObject {    
+    func singUp(email: String, password: String, completion: @escaping () -> Void)
 }
 
 class RegistrationViewModel: RegistrationViewModelType {
     var appCoordinator: AppCoordinator?
     
     
-    func singUp(email: String, password: String) {
+    func singUp(email: String, password: String, completion: @escaping () -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] data , error in
             if let error = error {
                 print(error)
@@ -27,7 +24,7 @@ class RegistrationViewModel: RegistrationViewModelType {
                 return
             }
             
-            self?.appCoordinator?.goTo(.main)
+            self?.appCoordinator?.push(.main)
         }
     }
 }

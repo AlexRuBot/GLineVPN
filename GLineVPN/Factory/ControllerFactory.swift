@@ -41,9 +41,9 @@ struct ControllerFactory: GenericFactory {
             
         case .setting:
             let settingVC = SettingViewController()
-//            let settingVM = RegistrationViewModel()
-//            settingVM.appCoordinator = config.coordinator
-//            settingVC.viewModel = settingVM
+            let settingVM = SettingViewModel()
+            settingVM.appCoordinator = config.coordinator
+            settingVC.viewModel = settingVM
             return settingVC
             
         case .chooseLocation:
