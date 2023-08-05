@@ -16,7 +16,6 @@
 		E0F1067D2A7BBDD400C467BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1067C2A7BBDD400C467BE /* SceneDelegate.swift */; };
 		E0F106842A7BBDD500C467BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F106832A7BBDD500C467BE /* Assets.xcassets */; };
 		E0F106872A7BBDD500C467BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F106852A7BBDD500C467BE /* LaunchScreen.storyboard */; };
-		E0F106922A7BC18F00C467BE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F106912A7BC18F00C467BE /* BaseNavigationController.swift */; };
 		E0F106952A7BC36700C467BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0F106942A7BC36700C467BE /* SnapKit */; };
 		E0F106972A7BC3BC00C467BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F106962A7BC3BC00C467BE /* LogInViewController.swift */; };
 		E0F106992A7BC3E400C467BE /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F106982A7BC3E400C467BE /* LogInView.swift */; };
@@ -36,7 +35,6 @@
 		E0F106BB2A7BC6C600C467BE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F106BA2A7BC6C600C467BE /* AppCoordinator.swift */; };
 		E0F106C32A7BD0D800C467BE /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F106C22A7BD0D800C467BE /* GenericFactory.swift */; };
 		E0F106C52A7BD19A00C467BE /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F106C42A7BD19A00C467BE /* ControllerFactory.swift */; };
-		E0F106C72A7BD31100C467BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F106C62A7BD31100C467BE /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +48,6 @@
 		E0F106862A7BBDD500C467BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0F106882A7BBDD500C467BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0F1068E2A7BBE3700C467BE /* GLineVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GLineVPN.entitlements; sourceTree = "<group>"; };
-		E0F106912A7BC18F00C467BE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		E0F106962A7BC3BC00C467BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E0F106982A7BC3E400C467BE /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		E0F1069A2A7BC3F700C467BE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		E0F106BA2A7BC6C600C467BE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E0F106C22A7BD0D800C467BE /* GenericFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFactory.swift; sourceTree = "<group>"; };
 		E0F106C42A7BD19A00C467BE /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
-		E0F106C62A7BD31100C467BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +122,6 @@
 				E0F106C12A7BD0BA00C467BE /* Factory */,
 				E0F106C02A7BCD5000C467BE /* Views */,
 				E0F106B92A7BC62200C467BE /* Coorditator */,
-				E0F106902A7BC12500C467BE /* BaseUI */,
 				E0F1068F2A7BBEB500C467BE /* Support */,
 			);
 			path = GLineVPN;
@@ -144,15 +139,6 @@
 				E0F106882A7BBDD500C467BE /* Info.plist */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		E0F106902A7BC12500C467BE /* BaseUI */ = {
-			isa = PBXGroup;
-			children = (
-				E0F106912A7BC18F00C467BE /* BaseNavigationController.swift */,
-				E0F106C62A7BD31100C467BE /* BaseViewController.swift */,
-			);
-			path = BaseUI;
 			sourceTree = "<group>";
 		};
 		E0F1069C2A7BC3FC00C467BE /* LogIn */ = {
@@ -328,14 +314,12 @@
 				E0F106B42A7BC51200C467BE /* RegistrationView.swift in Sources */,
 				E0F106AF2A7BC4C000C467BE /* MainViewModel.swift in Sources */,
 				E0F106A52A7BC48800C467BE /* ChooseLocationViewController.swift in Sources */,
-				E0F106C72A7BD31100C467BE /* BaseViewController.swift in Sources */,
 				E0F106B12A7BC4C800C467BE /* MainViewController.swift in Sources */,
 				E0F106B82A7BC52600C467BE /* RegistrationViewController.swift in Sources */,
 				E0F1067D2A7BBDD400C467BE /* SceneDelegate.swift in Sources */,
 				E0F106A92A7BC4A600C467BE /* SettingViewModel.swift in Sources */,
 				E0F106BB2A7BC6C600C467BE /* AppCoordinator.swift in Sources */,
 				E0F1069B2A7BC3F700C467BE /* LogInViewModel.swift in Sources */,
-				E0F106922A7BC18F00C467BE /* BaseNavigationController.swift in Sources */,
 				E0F106AB2A7BC4AE00C467BE /* SettingViewController.swift in Sources */,
 				E093780F2A7DCF0B00BCA327 /* Observable.swift in Sources */,
 			);
