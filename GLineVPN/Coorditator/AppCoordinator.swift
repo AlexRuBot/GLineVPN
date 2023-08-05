@@ -6,28 +6,35 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol Coordinator {
-    var parentCoordinator: Coordinator? { get set }
-    var children: [Coordinator] { get set }
     var navigationController : UINavigationController { get set }
     
     func start()
+    func goTo(_ view: ViewsType)
+    func back()
+    func backToLogIn()
+    
+    func showAlert(title: String, message: String)
 }
 
 
 class AppCoordinator: Coordinator {
-    
-    var parentCoordinator: Coordinator?
-    var children: [Coordinator] = []
+
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        
     }
     
     func start() {
-        goTo(.registration)
+        let viewController = ControllerFactory.build(config: (.logIn, self))
+        navigationController.setViewControllers([viewController], animated: true)
+        if Auth.auth().currentUser != nil {
+            goTo(.main)
+        }
     }
     
     func goTo(_ view: ViewsType) {
@@ -39,7 +46,15 @@ class AppCoordinator: Coordinator {
         navigationController.popViewController(animated: true)
     }
     
-    func back(to view: ViewsType) {
-        
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        navigationController.present(alert, animated: true)
     }
+    
+    func backToLogIn() {
+        let logInVC = navigationController.popToRootViewController(animated: true)
+    }
+
+    
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E093780F2A7DCF0B00BCA327 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093780E2A7DCF0B00BCA327 /* Observable.swift */; };
+		E09378122A7E74DB00BCA327 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E09378112A7E74DB00BCA327 /* GoogleService-Info.plist */; };
+		E09378152A7E75C000BCA327 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E09378142A7E75C000BCA327 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		E09378172A7E75C000BCA327 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E09378162A7E75C000BCA327 /* FirebaseAuth */; };
+		E093781A2A7E94B300BCA327 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09378192A7E94B300BCA327 /* String + Ext.swift */; };
 		E0F1067B2A7BBDD400C467BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1067A2A7BBDD400C467BE /* AppDelegate.swift */; };
 		E0F1067D2A7BBDD400C467BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1067C2A7BBDD400C467BE /* SceneDelegate.swift */; };
 		E0F106842A7BBDD500C467BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F106832A7BBDD500C467BE /* Assets.xcassets */; };
@@ -35,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E093780E2A7DCF0B00BCA327 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		E09378112A7E74DB00BCA327 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E09378192A7E94B300BCA327 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 		E0F106772A7BBDD400C467BE /* GLineVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLineVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F1067A2A7BBDD400C467BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0F1067C2A7BBDD400C467BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,12 +78,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0F106952A7BC36700C467BE /* SnapKit in Frameworks */,
+				E09378172A7E75C000BCA327 /* FirebaseAuth in Frameworks */,
+				E09378152A7E75C000BCA327 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E093780D2A7DCEED00BCA327 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				E093780E2A7DCF0B00BCA327 /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		E09378182A7E94A000BCA327 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				E09378192A7E94B300BCA327 /* String + Ext.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		E0F1066E2A7BBDD400C467BE = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +121,8 @@
 		E0F106792A7BBDD400C467BE /* GLineVPN */ = {
 			isa = PBXGroup;
 			children = (
+				E09378182A7E94A000BCA327 /* Extentions */,
+				E093780D2A7DCEED00BCA327 /* Observable */,
 				E0F106C12A7BD0BA00C467BE /* Factory */,
 				E0F106C02A7BCD5000C467BE /* Views */,
 				E0F106B92A7BC62200C467BE /* Coorditator */,
@@ -112,6 +140,7 @@
 				E0F1067C2A7BBDD400C467BE /* SceneDelegate.swift */,
 				E0F106832A7BBDD500C467BE /* Assets.xcassets */,
 				E0F106852A7BBDD500C467BE /* LaunchScreen.storyboard */,
+				E09378112A7E74DB00BCA327 /* GoogleService-Info.plist */,
 				E0F106882A7BBDD500C467BE /* Info.plist */,
 			);
 			path = Support;
@@ -223,6 +252,8 @@
 			name = GLineVPN;
 			packageProductDependencies = (
 				E0F106942A7BC36700C467BE /* SnapKit */,
+				E09378142A7E75C000BCA327 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				E09378162A7E75C000BCA327 /* FirebaseAuth */,
 			);
 			productName = GLineVPN;
 			productReference = E0F106772A7BBDD400C467BE /* GLineVPN.app */;
@@ -254,6 +285,7 @@
 			mainGroup = E0F1066E2A7BBDD400C467BE;
 			packageReferences = (
 				E0F106932A7BC36700C467BE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E09378132A7E75C000BCA327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E0F106782A7BBDD400C467BE /* Products */;
 			projectDirPath = "";
@@ -271,6 +303,7 @@
 			files = (
 				E0F106872A7BBDD500C467BE /* LaunchScreen.storyboard in Resources */,
 				E0F106842A7BBDD500C467BE /* Assets.xcassets in Resources */,
+				E09378122A7E74DB00BCA327 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E093781A2A7E94B300BCA327 /* String + Ext.swift in Sources */,
 				E0F106C32A7BD0D800C467BE /* GenericFactory.swift in Sources */,
 				E0F106A32A7BC47F00C467BE /* ChooseLocationView.swift in Sources */,
 				E0F106B62A7BC51B00C467BE /* RegistrationViewModel.swift in Sources */,
@@ -303,6 +337,7 @@
 				E0F1069B2A7BC3F700C467BE /* LogInViewModel.swift in Sources */,
 				E0F106922A7BC18F00C467BE /* BaseNavigationController.swift in Sources */,
 				E0F106AB2A7BC4AE00C467BE /* SettingViewController.swift in Sources */,
+				E093780F2A7DCF0B00BCA327 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +557,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E09378132A7E75C000BCA327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		E0F106932A7BC36700C467BE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -533,6 +576,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E09378142A7E75C000BCA327 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E09378132A7E75C000BCA327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		E09378162A7E75C000BCA327 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E09378132A7E75C000BCA327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		E0F106942A7BC36700C467BE /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E0F106932A7BC36700C467BE /* XCRemoteSwiftPackageReference "SnapKit" */;

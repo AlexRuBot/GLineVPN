@@ -20,9 +20,9 @@ struct ControllerFactory: GenericFactory {
         switch config.view {
         case .main:
             let mainVC = MainViewController()
-//            let registrationVM = RegistrationViewModel()
-//            registrationVM.appCoordinator = config.coordinator
-//            registrationVC.viewModel = registrationVM
+            let mainVM = MainViewModel()
+            mainVM.appCoordinator = config.coordinator
+            mainVC.viewModel = mainVM
             return mainVC
             
         case .logIn:
