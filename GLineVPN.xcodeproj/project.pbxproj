@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E045417F2A89150700F7F8FD /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045417D2A89150700F7F8FD /* KeychainWrapper.swift */; };
+		E04541802A89150700F7F8FD /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045417E2A89150700F7F8FD /* KeychainItemAccessibility.swift */; };
+		E04541842A89164D00F7F8FD /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04541832A89164D00F7F8FD /* Configuration.swift */; };
+		E04541862A89165400F7F8FD /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04541852A89165400F7F8FD /* VPNManager.swift */; };
+		E04541882A896B5300F7F8FD /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04541872A896B5300F7F8FD /* UIColor + Ext.swift */; };
 		E093780F2A7DCF0B00BCA327 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093780E2A7DCF0B00BCA327 /* Observable.swift */; };
 		E09378122A7E74DB00BCA327 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E09378112A7E74DB00BCA327 /* GoogleService-Info.plist */; };
 		E09378152A7E75C000BCA327 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E09378142A7E75C000BCA327 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		E09378172A7E75C000BCA327 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E09378162A7E75C000BCA327 /* FirebaseAuth */; };
 		E093781A2A7E94B300BCA327 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09378192A7E94B300BCA327 /* String + Ext.swift */; };
+		E093781D2A7ECCC300BCA327 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093781C2A7ECCC300BCA327 /* DataBaseManager.swift */; };
 		E0F1067B2A7BBDD400C467BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1067A2A7BBDD400C467BE /* AppDelegate.swift */; };
 		E0F1067D2A7BBDD400C467BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1067C2A7BBDD400C467BE /* SceneDelegate.swift */; };
 		E0F106842A7BBDD500C467BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F106832A7BBDD500C467BE /* Assets.xcassets */; };
@@ -38,9 +44,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E045417D2A89150700F7F8FD /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		E045417E2A89150700F7F8FD /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		E04541832A89164D00F7F8FD /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		E04541852A89165400F7F8FD /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		E04541872A896B5300F7F8FD /* UIColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
 		E093780E2A7DCF0B00BCA327 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		E09378112A7E74DB00BCA327 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E09378192A7E94B300BCA327 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		E093781C2A7ECCC300BCA327 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		E0F106772A7BBDD400C467BE /* GLineVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLineVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F1067A2A7BBDD400C467BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0F1067C2A7BBDD400C467BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E04541782A8914D500F7F8FD /* Keychein */ = {
+			isa = PBXGroup;
+			children = (
+				E045417E2A89150700F7F8FD /* KeychainItemAccessibility.swift */,
+				E045417D2A89150700F7F8FD /* KeychainWrapper.swift */,
+			);
+			path = Keychein;
+			sourceTree = "<group>";
+		};
 		E093780D2A7DCEED00BCA327 /* Observable */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +115,18 @@
 			isa = PBXGroup;
 			children = (
 				E09378192A7E94B300BCA327 /* String + Ext.swift */,
+				E04541872A896B5300F7F8FD /* UIColor + Ext.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		E093781B2A7ECCAB00BCA327 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				E04541782A8914D500F7F8FD /* Keychein */,
+				E093781C2A7ECCC300BCA327 /* DataBaseManager.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		E0F1066E2A7BBDD400C467BE = {
@@ -117,6 +148,9 @@
 		E0F106792A7BBDD400C467BE /* GLineVPN */ = {
 			isa = PBXGroup;
 			children = (
+				E04541832A89164D00F7F8FD /* Configuration.swift */,
+				E04541852A89165400F7F8FD /* VPNManager.swift */,
+				E093781B2A7ECCAB00BCA327 /* DataBase */,
 				E09378182A7E94A000BCA327 /* Extentions */,
 				E093780D2A7DCEED00BCA327 /* Observable */,
 				E0F106C12A7BD0BA00C467BE /* Factory */,
@@ -301,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E093781A2A7E94B300BCA327 /* String + Ext.swift in Sources */,
+				E04541862A89165400F7F8FD /* VPNManager.swift in Sources */,
 				E0F106C32A7BD0D800C467BE /* GenericFactory.swift in Sources */,
 				E0F106A32A7BC47F00C467BE /* ChooseLocationView.swift in Sources */,
 				E0F106B62A7BC51B00C467BE /* RegistrationViewModel.swift in Sources */,
@@ -315,12 +350,17 @@
 				E0F106AF2A7BC4C000C467BE /* MainViewModel.swift in Sources */,
 				E0F106A52A7BC48800C467BE /* ChooseLocationViewController.swift in Sources */,
 				E0F106B12A7BC4C800C467BE /* MainViewController.swift in Sources */,
+				E093781D2A7ECCC300BCA327 /* DataBaseManager.swift in Sources */,
 				E0F106B82A7BC52600C467BE /* RegistrationViewController.swift in Sources */,
 				E0F1067D2A7BBDD400C467BE /* SceneDelegate.swift in Sources */,
 				E0F106A92A7BC4A600C467BE /* SettingViewModel.swift in Sources */,
 				E0F106BB2A7BC6C600C467BE /* AppCoordinator.swift in Sources */,
+				E04541842A89164D00F7F8FD /* Configuration.swift in Sources */,
 				E0F1069B2A7BC3F700C467BE /* LogInViewModel.swift in Sources */,
+				E04541882A896B5300F7F8FD /* UIColor + Ext.swift in Sources */,
+				E045417F2A89150700F7F8FD /* KeychainWrapper.swift in Sources */,
 				E0F106AB2A7BC4AE00C467BE /* SettingViewController.swift in Sources */,
+				E04541802A89150700F7F8FD /* KeychainItemAccessibility.swift in Sources */,
 				E093780F2A7DCF0B00BCA327 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +504,7 @@
 				DEVELOPMENT_TEAM = 2NJA6A6R83;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GLineVPN/Support/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = GLineVPN;
+				INFOPLIST_KEY_CFBundleDisplayName = G.VPN;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -496,7 +536,7 @@
 				DEVELOPMENT_TEAM = 2NJA6A6R83;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GLineVPN/Support/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = GLineVPN;
+				INFOPLIST_KEY_CFBundleDisplayName = G.VPN;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

@@ -11,9 +11,7 @@ import FirebaseAuth
 class MainViewController: UIViewController {
     
     var viewModel: MainViewModelType?
-    var baseView: MainView = MainView()
-    var user: User? = Auth.auth().currentUser
-    
+    var baseView: MainView = MainView()    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

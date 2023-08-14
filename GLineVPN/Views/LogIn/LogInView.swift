@@ -19,6 +19,9 @@ class LogInView: UIView {
         textField.autocorrectionType = .no
         textField.textContentType = .emailAddress
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.cornerRadius = 10
+        textField.backgroundColor = UIColor(hexString: "#007AFF")
+        textField.textColor = UIColor(hexString: "#000000")
         return textField
     }()
     
@@ -66,6 +69,7 @@ class LogInView: UIView {
         
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.backgroundColor = .white
         addSubviews()
         addConstraints()
     }
@@ -115,13 +119,4 @@ class LogInView: UIView {
             make.top.equalTo(sindUpButton.snp.bottom).offset(16)
         }
     }
-    
-    private func textFieldAdd(_image: UIImage, _placeholder: String) {
-        let image = UIImageView(image: _image)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        emailTextField.leftView = image
-        emailTextField.leftViewMode = .always
-        emailTextField.placeholder = _placeholder
-    }
-
 }

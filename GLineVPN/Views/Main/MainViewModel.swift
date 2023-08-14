@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import NetworkExtension
 
 protocol MainViewModelType: AnyObject {
     var statusConnect: Observable<String>? { get set }
@@ -36,6 +37,15 @@ class MainViewModel: MainViewModelType {
             timerConnect?.value = convertTime(time: totalTime)
         }
     }
+    private var keycheinUid: String? {
+        get{
+            Auth.auth().currentUser?.uid
+        }
+    }
+    private let vpnManager = VPNManager.shared
+    
+    
+    
     
     func goToSetting() {
         appCoordinator?.push(.setting)
@@ -61,11 +71,13 @@ class MainViewModel: MainViewModelType {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
                 self?.totalTime += 1
             }
+        startVPN()
     }
     
     private func stopTimer() {
             timer?.invalidate()
             totalTime = 0
+        vpnManager.disconnect()
     }
     
     private func convertTime(time: Int) -> String {
@@ -73,6 +85,16 @@ class MainViewModel: MainViewModelType {
         let minutes = (time % 3600) / 60
         let seconds = (time % 3600) % 60
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
+    
+    private func startVPN() {
+        vpnManager.connectIPSec(config: Configuration(server: "gr4.vpnjantit.com",
+                                                      account: "alexrubot-vpnjantit.com",
+                                                      password: "test123344",
+                                                      psk: "vpn")) { error in
+            self.appCoordinator?.showAlert(title: "Error", message: error)
+        }
     }
 
 }

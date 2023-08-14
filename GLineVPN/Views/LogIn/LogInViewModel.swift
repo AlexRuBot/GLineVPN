@@ -31,7 +31,13 @@ class LogInViewModel: LogInViewModelType {
                 return completion()
             }
             
+            if let data = data {
+            } else {
+                self?.appCoordinator?.showAlert(title: "Error", message: "Invalid user")
+                return completion()
+            }
             self?.appCoordinator?.push(.main)
+            completion()
         }
         
     }
